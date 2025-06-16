@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'
 import Cartilla from './Cartilla';
-import Pie from './Pie';
 function Inicio(props) {
   
   return (
@@ -12,7 +11,6 @@ function Inicio(props) {
       <Cartilla Images="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTOKsQsFlO-s88Vfyi4vANb8COrbaL2eAtPQq5nvFQhT-PeW7akqCw0XNE-wzqVqJt8_F6buYlqqezEJenooQ0jww" titulo="Keira Knightley" ></Cartilla>
 
       </dir>
-      <Pie></Pie>
     </>
   );
 }

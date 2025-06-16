@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Pie from './Pie';
 import './App.css'
 function Pelicula(args) {
   const [modal, setModal] = useState(false);
@@ -10,8 +9,9 @@ function Pelicula(args) {
   return (
     <>
     <div className="Row">
+      
       <div>
-        <Button color="danger" onClick={toggle}>
+        <Button color="danger"  className="botones btn-hover"  outline size="lg"   onClick={toggle}>
           BATMAN
         </Button>
         <Modal isOpen={modal} toggle={toggle} {...args}>
@@ -32,7 +32,7 @@ function Pelicula(args) {
         </Modal>
       </div>
       <div>
-        <Button color="danger" onClick={toggle}>
+        <Button className="botones btn-hover" color="danger"   outline size="lg" onClick={toggle}>
           SUPER MAN
         </Button>
         <Modal isOpen={modal} toggle={toggle} {...args}>
@@ -52,7 +52,7 @@ function Pelicula(args) {
         </Modal>
       </div>
       <div>
-        <Button color="danger" onClick={toggle}>
+        <Button className="botones btn-hover" color="danger"   outline size="lg" onClick={toggle}>
           ATN-MAN
         </Button>
         <Modal isOpen={modal} toggle={toggle} {...args}>
@@ -71,7 +71,7 @@ function Pelicula(args) {
         </Modal>
       </div>
       <div>
-        <Button color="danger" onClick={toggle}>
+        <Button className="botones btn-hover" color="danger"   outline size="lg" onClick={toggle}>
           JOKER
         </Button>
         <Modal isOpen={modal} toggle={toggle} {...args}>
@@ -90,34 +90,13 @@ function Pelicula(args) {
         </Modal>
       </div>
       <div>
-        <Button color="danger" onClick={toggle}>
-          SPIDERMAN
+        <Button className="botones btn-hover" color="danger"   outline size="lg" onClick={toggle}>
+          IRON - MAN
         </Button>
         <Modal isOpen={modal} toggle={toggle} {...args}>
           <ModalHeader toggle={toggle}>Modal title</ModalHeader>
           <ModalBody>
-            Tras descubrirse la identidad secreta de Peter Parker como Spider-Man, la vida del joven se vuelve una locura. Peter le pide ayuda al Doctor Strange para recuperar su vida, pero algo sale mal y provoca una fractura en el multiverso.
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={toggle}>
-              VER
-            </Button>{' '}
-            <Button color="secondary" onClick={toggle}>
-              Cancel
-            </Button>
-          </ModalFooter>
-        </Modal>
-      </div>
-      <div>
-        <Button color="danger" onClick={toggle}>
-          BATMAN
-        </Button>
-        <Modal isOpen={modal} toggle={toggle} {...args}>
-          <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-          <ModalBody>
-            Batman explora la corrupción existente en la ciudad de Gotham 
-            y el vínculo de esta con su propia familia. Además, entra en 
-            conflicto con un asesino en serie conocido como "el Acertijo".
+           Un empresario millonario construye un traje blindado y lo usa para combatir el crimen y el terrorismo.
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={toggle}>
@@ -130,7 +109,6 @@ function Pelicula(args) {
         </Modal>
       </div>
     </div>
-    <Pie></Pie>
     
     </>
     
