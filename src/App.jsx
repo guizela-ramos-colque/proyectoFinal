@@ -1,33 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Inicio from './Incio';
+import Pelicula from './Pelicula';
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import React, { useState } from 'react';
+import { NavLink as RRNavLink } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+} from 'reactstrap';
+
+function MenuNabar(props) {
+
+  const [isOpen, setIsOpen] = useState(false);
+  
+    const toggle = () => setIsOpen(!isOpen);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar color="light" light expand="md">
+  <NavbarBrand tag={Link} to="/">Principal</NavbarBrand>
+  <NavbarToggler onClick={toggle} />
+  <Collapse isOpen={isOpen} navbar>
+    <Nav className="me-auto" navbar>
+      <NavItem>
+        <NavLink
+  tag={RRNavLink}
+  to="/Oferta"
+  className="nav-link"
+  activeClassName="active"
+>
+  Peliculas
+</NavLink>
+
+      </NavItem>
+    </Nav>
+  </Collapse>
+</Navbar>
+    </>
+    
+  );
+}
+function App() {
+
+  return (
+    <>
+      <header>
+        <h1>CINEMATECA BOLIVIANA</h1>
+      </header>
+      <nav>
+        <MenuNabar></MenuNabar>
+      </nav>
+      <section>
+        <Routes>
+          <Route path='/' element={<Inicio></Inicio>} ></Route>
+          <Route path='/Oferta' element={<Pelicula></Pelicula>} ></Route>
+        </Routes>
+      </section>
     </>
   )
 }
