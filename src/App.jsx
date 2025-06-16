@@ -1,6 +1,6 @@
-import './App.css'
-import Inicio from './Incio';
-import Pelicula from './Pelicula';
+import 'App.css'
+import Inicio from 'Incio';
+import Pelicula from 'Pelicula';
 import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import React, { useState } from 'react';
 import { NavLink as RRNavLink } from 'react-router-dom';
